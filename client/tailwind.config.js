@@ -8,6 +8,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: '#0D0D0D',
+        secondary: '#ECECEC',
+        tertiary: '#8D8C8D',
+      },
       fontFamily: {
         primary: 'var(--font-syne)',
         secondary: 'var(--font-nunito-sans)'
