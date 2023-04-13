@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const Intro = () => {
-	return <div>Intro</div>;
+  return <div></div>;
 };
 
 export default Intro;
