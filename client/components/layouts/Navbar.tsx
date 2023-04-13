@@ -32,21 +32,37 @@ const Navbar = () => {
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
         <Link href="/">
           <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
-            Captur
+            Token Tribe
           </h1>
         </Link>
-        <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
+        <ul
+          style={{ color: `${textColor}` }}
+          className="hidden sm:flex items-center justify-between"
+        >
           <li className="p-4">
             <Link href="/">Home</Link>
           </li>
           <li className="p-4">
-            <Link href="/#gallery">Gallery</Link>
+            <Link href="/#gallery">My Communities</Link>
           </li>
           <li className="p-4">
-            <Link href="/work">Work</Link>
+            <Link href="/work">About us</Link>
           </li>
           <li className="p-4">
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact">Future's</Link>
+          </li>
+          <li className="p-4">
+            <a
+              href="#_"
+              className="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-full group"
+            >
+              <span className="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
+              <span className="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-white opacity-100 group-hover:-translate-x-8"></span>
+              <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-gray-900">
+                Connect wallet
+              </span>
+              <span className="absolute inset-0 border-2 border-white rounded-full"></span>
+            </a>
           </li>
         </ul>
 
@@ -77,19 +93,32 @@ const Navbar = () => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#gallery">Gallery</Link>
+              <Link href="/#communities">My Communities</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/work">Work</Link>
+              <Link href="/aboutUs">About us</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/contact">Contact</Link>
+              <Link href="/futures">Future's</Link>
+            </li>
+            <li onClick={handleNav} className="p-4 text-4xl ">
+              <Link
+                href="/connectWallet"
+                className="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-full group"
+              >
+                <span className="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
+                <span className="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-white opacity-100 group-hover:-translate-x-8"></span>
+                <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-gray-900">
+                  Connect Wallet
+                </span>
+                <span className="absolute inset-0 border-2 border-white rounded-full"></span>
+              </Link>
             </li>
           </ul>
         </div>
