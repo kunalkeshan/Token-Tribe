@@ -1,3 +1,4 @@
+import Communities from '@/components/landing/Communities';
 import Intro from '@/components/landing/Intro';
 import PublicLayout from '@/layouts/PublicLayout';
 import Head from 'next/head';
@@ -18,6 +19,7 @@ export default function Home() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Intro />
+			<Communities />
 		</PublicLayout>
 	);
 }
