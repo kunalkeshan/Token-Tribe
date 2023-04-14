@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   AiFillGithub,
@@ -52,18 +51,18 @@ const Footer = () => {
       portfolio: "https://kevinpaul.xyz",
     },
     {
-      name: "Zeeshan Javed",
-      github: "https://github.com/zeeshan8281",
-      linkedin: "https://www.linkedin.com/in/mohammad-zeeshan-jawed-bab51a1a6",
-      twitter: "https://twitter.com/zeeshan_utd?t=ByuEiYw8co0PYTrS3eAUzw&s=09",
-      portfolio: "",
-    },
-    {
       name: "Arnav Shukla",
       github: "https://github.com/thelordzeus",
       linkedin: "https://www.linkedin.com/in/arnavshukla",
       twitter: "https://twitter.com/iamlordzeus",
       portfolio: "https://thelordzeus.vercel.app",
+    },
+    {
+      name: "Zeeshan Javed",
+      github: "https://github.com/zeeshan8281",
+      linkedin: "https://www.linkedin.com/in/mohammad-zeeshan-jawed-bab51a1a6",
+      twitter: "https://twitter.com/zeeshan_utd?t=ByuEiYw8co0PYTrS3eAUzw&s=09",
+      portfolio: "",
     },
   ];
 
