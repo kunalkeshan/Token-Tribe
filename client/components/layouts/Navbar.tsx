@@ -13,13 +13,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const changeColor = () => {
-      if (window.scrollY >= 90) {
-        setColor("#ffffff");
-        setTextColor("#000000");
-      } else {
-        setColor("transparent");
-        setTextColor("#ffffff");
-      }
+      setColor("#0D0D0D");
+      setTextColor("#ffffff");
     };
     window.addEventListener("scroll", changeColor);
   }, []);
@@ -27,7 +22,7 @@ const Navbar = () => {
   return (
     <div
       style={{ backgroundColor: `${color}` }}
-      className="fixed left-0 top-0 w-full z-10 ease-in duration-300"
+      className="sticky  left-0 top-0 w-full  ease-in duration-300 "
     >
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
         <Link href="/">
@@ -39,16 +34,16 @@ const Navbar = () => {
           style={{ color: `${textColor}` }}
           className="hidden sm:flex items-center justify-between"
         >
-          <li className="p-4">
+          <li className="p-4 hover:text-gray-500">
             <Link href="/">Home</Link>
           </li>
-          <li className="p-4">
+          <li className="p-4 hover:text-gray-500">
             <Link href="/#gallery">My Communities</Link>
           </li>
-          <li className="p-4">
+          <li className="p-4 hover:text-gray-500">
             <Link href="/work">About us</Link>
           </li>
-          <li className="p-4">
+          <li className="p-4 hover:text-gray-500">
             <Link href="/contact">Future's</Link>
           </li>
           <li className="p-4">
