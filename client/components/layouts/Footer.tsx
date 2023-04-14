@@ -55,7 +55,7 @@ const Footer = () => {
       github: "https://github.com/thelordzeus",
       linkedin: "https://www.linkedin.com/in/arnavshukla",
       twitter: "https://twitter.com/iamlordzeus",
-      portfolio: "https://thelordzeus.vercel.app",
+      portfolio: "https://www.lordzeus.tech",
     },
     {
       name: "Zeeshan Javed",
@@ -110,16 +110,28 @@ const Footer = () => {
                 >
                   <li className="text-white ">{option.name}</li>
                   <li className="flex hover:text-gray-500">
-                    <Link href={option.github} className="pr-2">
+                    <Link href={option.github} className="pr-2" target="_blank">
                       <AiFillGithub size={25} />
                     </Link>
-                    <Link href={option.linkedin} className="pr-2">
+                    <Link
+                      href={option.linkedin}
+                      className="pr-2"
+                      target="_blank"
+                    >
                       <AiFillLinkedin size={25} />
                     </Link>
-                    <Link href={option.twitter} className="pr-2">
+                    <Link
+                      href={option.twitter}
+                      className="pr-2"
+                      target="_blank"
+                    >
                       <AiFillTwitterCircle size={25} />
                     </Link>
-                    <Link href={option.portfolio} className="pr-2">
+                    <Link
+                      href={option.portfolio}
+                      className="pr-2"
+                      target="_blank"
+                    >
                       <AiOutlineLink size={25} />
                     </Link>
                   </li>
