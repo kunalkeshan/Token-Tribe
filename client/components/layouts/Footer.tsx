@@ -78,9 +78,9 @@ const Footer = () => {
               Token Tribe
             </a>
           </div>
-          <p className="text-sm">
-            <p>Copyright &copy; 2023 Token Tribe</p>
-            <p>All rights reserved.</p>
+          <p className="text-sm text-gray-300">
+            <span>Copyright &copy; 2023 Token Tribe</span>
+            <span>All rights reserved.</span>
           </p>
         </div>
         <div className="my-[2%] flex-grow">
