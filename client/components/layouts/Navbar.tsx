@@ -1,15 +1,15 @@
-import Link from "next/link";
-import React, { useState, useEffect } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
-  const [color, setColor] = useState("transparent");
-  const [textColor, setTextColor] = useState("white");
+	const [nav, setNav] = useState(false);
+	const [color, setColor] = useState('transparent');
+	const [textColor, setTextColor] = useState('white');
 
-  const handleNav = () => {
-    setNav(!nav);
-  };
+	const handleNav = () => {
+		setNav(!nav);
+	};
 
   useEffect(() => {
     const changeColor = () => {

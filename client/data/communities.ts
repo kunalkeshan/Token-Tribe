@@ -31,6 +31,7 @@ export interface Community {
 	};
 	ideas: Ideas;
 	pool: Poll;
+	myCommunity: boolean;
 }
 
 export type Communities = Community[];
@@ -80,6 +81,7 @@ const communities: Communities = [
 			target: 'Make squid game a real life event.',
 			deadline: Date.now() + 1000000000,
 		},
+		myCommunity: true,
 	},
 	{
 		name: 'Tanmay Bhat',
@@ -123,6 +125,7 @@ const communities: Communities = [
 			target: 'Make finance easy to learn with jokes as complementary',
 			deadline: Date.now() + 1000000000,
 		},
+		myCommunity: false,
 	},
 	{
 		name: 'PewDiePie',
@@ -165,8 +168,8 @@ const communities: Communities = [
 		pool: {
 			target: 'Play minecraft for the next 30 days till I kill the ether dragon.',
 			deadline: Date.now() + 1000000000,
-
 		},
+		myCommunity: false,
 	},
 ];
 
