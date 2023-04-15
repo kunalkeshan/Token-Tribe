@@ -165,6 +165,7 @@ const communities: Communities = [
 		pool: {
 			target: 'Play minecraft for the next 30 days till I kill the ether dragon.',
 			deadline: Date.now() + 1000000000,
+
 		},
 	},
 ];
