@@ -22,7 +22,6 @@ const Navbar = () => {
     };
     window.addEventListener("scroll", changeColor);
   }, []);
-
   return (
     <nav
       style={{ backgroundColor: `${color}` }}

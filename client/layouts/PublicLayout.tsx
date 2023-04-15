@@ -6,7 +6,7 @@ const PublicLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
 	return (
 		<>
 			<Navbar />
-			<main>{children}</main>
+			<main className='px-12'>{children}</main>
 			<Footer />
 		</>
 	);
