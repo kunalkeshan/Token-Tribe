@@ -19,7 +19,7 @@ const nunitoSans = Nunito_Sans({
 export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<main
-			className={`${syne.variable} ${nunitoSans.variable} font-primary bg-primary text-secondary w-full min-h-screen`}
+			className={`${syne.variable} ${nunitoSans.variable} font-secondary bg-primary text-secondary w-full min-h-screen`}
 		>
 			<Component {...pageProps} />
 		</main>
