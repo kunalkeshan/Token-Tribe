@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+import '@rainbow-me/rainbowkit/styles.css';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -35,7 +37,7 @@ const Navbar = () => {
         </Link>
         <ul
           style={{ color: `${textColor}` }}
-          className="hidden sm:flex items-center justify-between"
+          className="hidden md:flex items-center justify-between"
         >
           <li className="p-4 hover:text-gray-500">
             <Link href="/">Explore</Link>
@@ -47,9 +49,9 @@ const Navbar = () => {
             <Link href="/work">About us</Link>
           </li>
           <li className="p-4 hover:text-gray-500">
-            <Link href="/buy">Buy Token</Link>
+            <Link href="/contact">Future's</Link>
           </li>
-          <li className="p-4">
+          {/* <li className="p-4">
             <a
               href="#_"
               className="relative inline-flex items-center justify-start px-5 py-3 overflow-hidden font-bold rounded-full group"
@@ -57,15 +59,25 @@ const Navbar = () => {
               <span className="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
               <span className="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-white opacity-100 group-hover:-translate-x-8"></span>
               <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-gray-900">
-                Connect wallet
+                Connect Wallet
               </span>
               <span className="absolute inset-0 border-2 border-white rounded-full"></span>
             </a>
-          </li>
+          </li> */}
+          
         </ul>
-
+        <ConnectButton 
+            chainStatus={{
+              smallScreen: "icon", 
+              largeScreen: "full"
+            }}   
+            accountStatus={{
+              smallScreen: 'avatar',
+              largeScreen: 'avatar',
+            }}
+          />
         {/* Mobile Button */}
-        <div onClick={handleNav} className="block sm:hidden z-10">
+        <div onClick={handleNav} className="block md:hidden z-10">
           {nav ? (
             <AiOutlineClose size={20} style={{ color: `${textColor}` }} />
           ) : (
@@ -103,7 +115,7 @@ const Navbar = () => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/buy">Buy Tokens</Link>
+              <Link href="/futures">Future's</Link>
             </li>
             <li onClick={handleNav} className="p-4 text-4xl ">
               <Link
