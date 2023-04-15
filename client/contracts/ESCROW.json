@@ -1,0 +1,83 @@
+{
+  "contractName": "ESCROW",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ESCROW.sol\":\"ESCROW\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ESCROW.sol\":{\"keccak256\":\"0x8513616dbe2537e5a0b6202ea94f32f774a2b5c232f79a7837e5bc67031c90f0\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://9f98aa1ad2ef5147881c8ac0d95fb4bb731bff1da874e6e4e9aef0f5fb78ff67\",\"dweb:/ipfs/QmW7Gm74qCeAnFqFbP7D9SLp3SJ8euX2nZmKXcxcffb14r\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122047c9e758eee3b62dbf5481e0c30d42b1dd1fd9ab7f0329e77fafba6d9a9168ce64736f6c63430008130033",
+  "deployedBytecode": "0x6080604052600080fdfea264697066735822122047c9e758eee3b62dbf5481e0c30d42b1dd1fd9ab7f0329e77fafba6d9a9168ce64736f6c63430008130033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "66:26:0:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "66:26:0:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity ^0.8.4;\r\n\r\ncontract ESCROW {\r\n    \r\n}",
+  "sourcePath": "C:\\Users\\kevin\\Documents\\blockchain\\Token-Tribe\\contracts\\ESCROW.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ESCROW.sol",
+    "exportedSymbols": {
+      "ESCROW": [
+        2
+      ]
+    },
+    "id": 3,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".4"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ESCROW",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "ESCROW",
+        "nameLocation": "75:6:0",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "66:26:0",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:53:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.19+commit.7dd6d404.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xfAe241076332DB3d6694157a9933Aa41d7F9E27C",
+      "transactionHash": "0xe6f893d633f18e0844afe558dab2ef5c8f709767cee7b5007bd5eeaca936a8d8"
+    }
+  },
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2023-04-14T17:41:09.866Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
