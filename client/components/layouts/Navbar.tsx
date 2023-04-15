@@ -42,13 +42,13 @@ const Navbar = () => {
             <Link href="/">Explore</Link>
           </li>
           <li className="p-4 hover:text-gray-500">
-            <Link href="/#gallery">My Communities</Link>
+            <Link href="/my-communities">My Communities</Link>
           </li>
           <li className="p-4 hover:text-gray-500">
-            <Link href="/work">About us</Link>
+            <Link href="/about">About us</Link>
           </li>
           <li className="p-4 hover:text-gray-500">
-            <Link href="/contact">Future's</Link>
+            <Link href="/buy">Buy Tokens</Link>
           </li>
           <li className="p-4">
             <a
@@ -104,7 +104,7 @@ const Navbar = () => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/futures">Future's</Link>
+              <Link href="/buy">Buy Tokens</Link>
             </li>
             <li onClick={handleNav} className="p-4 text-4xl ">
               <Link
