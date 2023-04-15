@@ -46,26 +46,33 @@ const IdeaCard = () => {
   return (
     <div>
       {Idea.map((idea) => (
-        <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mb-2">
+        <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mb-4">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {idea.title}
           </h5>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            <span className="font-bold">Target: </span>
-            {idea.target}
-          </p>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            <span className="font-bold">Deadline: </span>
-            {idea.deadline}
-          </p>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            <span className="font-bold">Raised Amount: </span>
-            {idea.raisedAmt}
-          </p>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            <span className="font-bold">Contributors: </span>
-            {idea.contributors}
-          </p>
+          <div className="flex">
+            <ul>
+              <li className="font-normal text-gray-700 dark:text-gray-400">
+                <span className="font-bold">Target: </span>
+                {idea.target}
+              </li>
+              <li className="font-normal text-gray-700 dark:text-gray-400">
+                <span className="font-bold">Deadline: </span>
+                {idea.deadline}
+              </li>
+              <li className="font-normal text-gray-700 dark:text-gray-400">
+                <span className="font-bold">Raised Amount: </span>
+                {idea.raisedAmt}
+              </li>
+              <li className="font-normal text-gray-700 dark:text-gray-400">
+                <span className="font-bold">Contributors: </span>
+                {idea.contributors}
+              </li>
+            </ul>
+            <div className="ml-12">
+              <p className="bg-blue-500 p-10 rounded-lg">{idea.daysLeft}</p>
+            </div>
+          </div>
         </div>
       ))}
     </div>
