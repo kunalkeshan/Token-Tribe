@@ -5,8 +5,8 @@ const { API_KEY, PRIVATE_KEY } = process.env;
 module.exports = {
   solidity: "0.8.18",
   networks: {
-    sepolia: {
-      url: `https://eth-sepolia.g.alchemy.com/v2/${API_KEY}`,
+    mumbai: {
+      url: `https://app.zeeve.io/shared-api/poly/${API_KEY}`,
       accounts: [PRIVATE_KEY],
     },
   },
