@@ -2,6 +2,15 @@
  * Communities Data
  */
 
+export interface Idea {
+	title: string;
+	target: string;
+	deadline: string;
+	raisedAmt: number;
+	contributors: number;
+	daysLeft: number;
+}
+
 export interface Community {
 	name: string;
 	slug: string;
@@ -16,9 +25,12 @@ export interface Community {
 		instagram: string;
 		twitter: string;
 	};
+	ideas: Ideas;
 }
 
 export type Communities = Community[];
+
+export type Ideas = Idea[];
 
 const communities: Communities = [
 	{
@@ -36,6 +48,32 @@ const communities: Communities = [
 			instagram: '#',
 			twitter: '#',
 		},
+		ideas: [
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: '2021-12-31',
+				raisedAmt: 25,
+				contributors: 10,
+				daysLeft: 10,
+			},
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: '2021-12-31',
+				raisedAmt: 25,
+				contributors: 10,
+				daysLeft: 10,
+			},
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: '2021-12-31',
+				raisedAmt: 25,
+				contributors: 10,
+				daysLeft: 10,
+			},
+		],
 	},
 	{
 		name: 'Tanmay Bhat',
@@ -52,6 +90,32 @@ const communities: Communities = [
 			instagram: '#',
 			twitter: '#',
 		},
+		ideas: [
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: '2021-12-31',
+				raisedAmt: 25,
+				contributors: 10,
+				daysLeft: 10,
+			},
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: '2021-12-31',
+				raisedAmt: 25,
+				contributors: 10,
+				daysLeft: 10,
+			},
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: '2021-12-31',
+				raisedAmt: 25,
+				contributors: 10,
+				daysLeft: 10,
+			},
+		],
 	},
 	{
 		name: 'PewDiePie',
@@ -68,6 +132,32 @@ const communities: Communities = [
 			instagram: '#',
 			twitter: '#',
 		},
+		ideas: [
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: '2021-12-31',
+				raisedAmt: 25,
+				contributors: 10,
+				daysLeft: 10,
+			},
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: '2021-12-31',
+				raisedAmt: 25,
+				contributors: 10,
+				daysLeft: 10,
+			},
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: '2021-12-31',
+				raisedAmt: 25,
+				contributors: 10,
+				daysLeft: 10,
+			},
+		],
 	},
 ];
 

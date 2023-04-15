@@ -1,83 +1,57 @@
-import React from "react";
+import React from 'react';
+import { Idea } from '@/data/communities';
+import { AiFillCalendar } from 'react-icons/ai';
+import { FaEthereum } from 'react-icons/fa';
+import { IoPeopleOutline } from 'react-icons/io5';
 
-const IdeaCard = () => {
-  const Idea = [
-    {
-      title: "XYZ Idea",
-      target: "xyz",
-      deadline: "2021-12-31",
-      raisedAmt: 25,
-      contributors: 10,
-      daysLeft: 10,
-    },
-    {
-      title: "XYZ Idea",
-      target: "xyz",
-      deadline: "2021-12-31",
-      raisedAmt: 25,
-      contributors: 10,
-      daysLeft: 10,
-    },
-    {
-      title: "XYZ Idea",
-      target: "xyz",
-      deadline: "2021-12-31",
-      raisedAmt: 25,
-      contributors: 10,
-      daysLeft: 10,
-    },
-    {
-      title: "XYZ Idea",
-      target: "xyz",
-      deadline: "2021-12-31",
-      raisedAmt: 25,
-      contributors: 10,
-      daysLeft: 10,
-    },
-    {
-      title: "XYZ Idea",
-      target: "xyz",
-      deadline: "2021-12-31",
-      raisedAmt: 25,
-      contributors: 10,
-      daysLeft: 10,
-    },
-  ];
-  return (
-    <div>
-      {Idea.map((idea) => (
-        <div className="block max-w-md p-6 border bg-secondary rounded-lg shadow   border-black  mb-4">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
-            {idea.title}
-          </h5>
-          <div className="flex ">
-            <ul>
-              <li className="font-bold text-tertiary">
-                <span className=" font-secondary ">Target: </span>
-                {idea.target}
-              </li>
-              <li className="font-bold text-tertiary">
-                <span className="font-secondary">Deadline: </span>
-                {idea.deadline}
-              </li>
-              <li className="font-bold text-tertiary">
-                <span className="font-secondary">Raised Amount: </span>
-                {idea.raisedAmt}
-              </li>
-              <li className="font-bold text-tertiary">
-                <span className="font-secondary">Contributors: </span>
-                {idea.contributors}
-              </li>
-            </ul>
-            <div className=" bg-tertiary p-8 rounded-lg space-y-1 mx-auto">
-              <p className="text-xl font-bold ml-3">{idea.daysLeft}</p>
-              <p className="font-secondary text-xs">Days Left</p>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
+const IdeaCard: React.FC<Idea> = ({
+	title,
+	target,
+	deadline,
+	raisedAmt,
+	contributors,
+	daysLeft,
+}) => {
+	const infoItems = [
+		{
+			Icon: AiFillCalendar,
+			info: deadline,
+			title: 'Deadline',
+		},
+		{
+			Icon: FaEthereum,
+			info: raisedAmt,
+			title: 'Amount Raised',
+		},
+		{
+			Icon: IoPeopleOutline,
+			info: contributors,
+			title: 'Contributors',
+		},
+	];
+
+	return (
+		<div className='block max-w-md p-6 border bg-[#222] rounded-lg shadow border-black text-secondary mb-4'>
+			<p className='font-primary font-bold text-lg'>{title}</p>
+			<div className='flex w-full items-center justify-between gap-4'>
+				<p>{target}</p>
+				<p className='bg-tertiary bg-opacity-40 flex items-center justify-center p-4 rounded-lg'>
+					{daysLeft} d left
+				</p>
+			</div>
+			<ul className='flex gap-4 items-center flex-wrap'>
+				{infoItems.map((item) => (
+					<li className='flex rounded-3xl bg-tertiary gap-4 bg-opacity-20 items-center px-4 py-2'>
+						<item.Icon className='text-xl' />
+						<span className='text-left font-primary w-full text-xs'>
+							<p className='font-bold'>{item.title}</p>
+							<p className=''>{item.info}</p>
+						</span>
+					</li>
+				))}
+			</ul>
+		</div>
+	);
 };
 
 export default IdeaCard;
