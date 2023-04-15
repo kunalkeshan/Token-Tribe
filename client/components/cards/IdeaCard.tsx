@@ -46,31 +46,32 @@ const IdeaCard = () => {
   return (
     <div>
       {Idea.map((idea) => (
-        <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mb-4">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <div className="block max-w-md p-6 border bg-secondary rounded-lg shadow   border-black  mb-4">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
             {idea.title}
           </h5>
-          <div className="flex">
+          <div className="flex ">
             <ul>
-              <li className="font-normal text-gray-700 dark:text-gray-400">
-                <span className="font-bold">Target: </span>
+              <li className="font-bold text-tertiary">
+                <span className=" font-secondary ">Target: </span>
                 {idea.target}
               </li>
-              <li className="font-normal text-gray-700 dark:text-gray-400">
-                <span className="font-bold">Deadline: </span>
+              <li className="font-bold text-tertiary">
+                <span className="font-secondary">Deadline: </span>
                 {idea.deadline}
               </li>
-              <li className="font-normal text-gray-700 dark:text-gray-400">
-                <span className="font-bold">Raised Amount: </span>
+              <li className="font-bold text-tertiary">
+                <span className="font-secondary">Raised Amount: </span>
                 {idea.raisedAmt}
               </li>
-              <li className="font-normal text-gray-700 dark:text-gray-400">
-                <span className="font-bold">Contributors: </span>
+              <li className="font-bold text-tertiary">
+                <span className="font-secondary">Contributors: </span>
                 {idea.contributors}
               </li>
             </ul>
-            <div className="ml-12">
-              <p className="bg-blue-500 p-10 rounded-lg">{idea.daysLeft}</p>
+            <div className=" bg-tertiary p-8 rounded-lg space-y-1 mx-auto">
+              <p className="text-xl font-bold ml-3">{idea.daysLeft}</p>
+              <p className="font-secondary text-xs">Days Left</p>
             </div>
           </div>
         </div>
