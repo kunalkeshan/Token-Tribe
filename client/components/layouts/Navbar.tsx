@@ -22,7 +22,7 @@ const Navbar = () => {
 	return (
 		<nav
 			style={{ backgroundColor: `${color}` }}
-			className='sticky  left-0 top-0 w-full  ease-in duration-300 '
+			className='sticky left-0 top-0 w-full  ease-in duration-300 z-50'
 		>
 			<div className='max-w-[1240px] m-auto flex justify-between items-center p-4 text-white'>
 				<Link href='/'>
