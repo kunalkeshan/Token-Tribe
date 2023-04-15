@@ -22,12 +22,11 @@ export type Communities = Community[];
 
 const communities: Communities = [
 	{
-		name: 'Garden Enthusiasts',
-		slug: 'garden-enthusiasts',
+		name: 'Mr. Beast',
+		slug: 'mr-beast',
 		description:
-			'A community for people who love gardening and growing their own food.',
-		profile:
-			'https://api.dicebear.com/6.x/icons/svg?seed=GardenEnthusiasts',
+			'Jimmy Donaldson, better known as MrBeast, is an American YouTuber and philanthropist. He is credited with pioneering a genre of YouTube videos that centers on expensive stunts.',
+		profile: '/images/mr-beast.jpg',
 		price: 0.003,
 		token: 'eth',
 		strength: 249,
@@ -39,11 +38,11 @@ const communities: Communities = [
 		},
 	},
 	{
-		name: 'CookingCraze',
-		slug: 'cooking-craze',
+		name: 'Tanmay Bhat',
+		slug: 'tanmay-bhat',
 		description:
-			'A community for foodies to share recipes, cooking tips, and showcase their culinary skills.',
-		profile: 'https://api.dicebear.com/6.x/icons/svg?seed=CookingCraze',
+			'Tanmay Bhat is an Indian YouTuber, comedian, scriptwriter, Actor, performer and producer.',
+		profile: '/images/tanmay.jpg',
 		price: 0.003,
 		token: 'eth',
 		strength: 249,
@@ -55,109 +54,11 @@ const communities: Communities = [
 		},
 	},
 	{
-		name: 'GameZone',
-		slug: 'game-zone',
+		name: 'PewDiePie',
+		slug: 'pewdiepie',
 		description:
-			'A community for gamers to share tips and tricks, discuss gaming news, and connect with other gamers.',
-		profile: 'https://api.dicebear.com/6.x/icons/svg?seed=GameZone',
-		price: 0.003,
-		token: 'eth',
-		strength: 249,
-		links: {
-			website: '#',
-			discord: '#',
-			instagram: '#',
-			twitter: '#',
-		},
-	},
-	{
-		name: 'Garden Enthusiasts',
-		slug: 'garden-enthusiasts',
-		description:
-			'A community for people who love gardening and growing their own food.',
-		profile:
-			'https://api.dicebear.com/6.x/icons/svg?seed=GardenEnthusiasts',
-		price: 0.003,
-		token: 'eth',
-		strength: 249,
-		links: {
-			website: '#',
-			discord: '#',
-			instagram: '#',
-			twitter: '#',
-		},
-	},
-	{
-		name: 'CookingCraze',
-		slug: 'cooking-craze',
-		description:
-			'A community for foodies to share recipes, cooking tips, and showcase their culinary skills.',
-		profile: 'https://api.dicebear.com/6.x/icons/svg?seed=CookingCraze',
-		price: 0.003,
-		token: 'eth',
-		strength: 249,
-		links: {
-			website: '#',
-			discord: '#',
-			instagram: '#',
-			twitter: '#',
-		},
-	},
-	{
-		name: 'GameZone',
-		slug: 'game-zone',
-		description:
-			'A community for gamers to share tips and tricks, discuss gaming news, and connect with other gamers.',
-		profile: 'https://api.dicebear.com/6.x/icons/svg?seed=GameZone',
-		price: 0.003,
-		token: 'eth',
-		strength: 249,
-		links: {
-			website: '#',
-			discord: '#',
-			instagram: '#',
-			twitter: '#',
-		},
-	},
-	{
-		name: 'Garden Enthusiasts',
-		slug: 'garden-enthusiasts',
-		description:
-			'A community for people who love gardening and growing their own food.',
-		profile:
-			'https://api.dicebear.com/6.x/icons/svg?seed=GardenEnthusiasts',
-		price: 0.003,
-		token: 'eth',
-		strength: 249,
-		links: {
-			website: '#',
-			discord: '#',
-			instagram: '#',
-			twitter: '#',
-		},
-	},
-	{
-		name: 'CookingCraze',
-		slug: 'cooking-craze',
-		description:
-			'A community for foodies to share recipes, cooking tips, and showcase their culinary skills.',
-		profile: 'https://api.dicebear.com/6.x/icons/svg?seed=CookingCraze',
-		price: 0.003,
-		token: 'eth',
-		strength: 249,
-		links: {
-			website: '#',
-			discord: '#',
-			instagram: '#',
-			twitter: '#',
-		},
-	},
-	{
-		name: 'GameZone',
-		slug: 'game-zone',
-		description:
-			'A community for gamers to share tips and tricks, discuss gaming news, and connect with other gamers.',
-		profile: 'https://api.dicebear.com/6.x/icons/svg?seed=GameZone',
+			"Felix Arvid Ulf Kjellberg, better known as PewDiePie, is a Swedish YouTuber known for his Let's Play videos and comedic formatted videos and shows.",
+		profile: '/images/pewdiepie.png',
 		price: 0.003,
 		token: 'eth',
 		strength: 249,
