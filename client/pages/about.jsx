@@ -1,9 +1,13 @@
 import React from "react";
 import PublicLayout from "@/layouts/PublicLayout";
+import Head from 'next/head';
 
 export default function About() {
   return (
     <PublicLayout>
+      <Head>
+        <title>About Token-Tribe</title>
+      </Head>
       <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
         <div className="flex flex-col lg:flex-row justify-between gap-8">
           <div className="w-full  flex flex-col justify-center">
