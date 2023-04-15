@@ -1,6 +1,8 @@
+import OgMetaTags from '@/components/resusable/OgMetaTags';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Syne, Nunito_Sans } from 'next/font/google';
+import Head from 'next/head';
 
 const syne = Syne({
 	subsets: ['latin'],
@@ -18,10 +20,15 @@ const nunitoSans = Nunito_Sans({
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<main
-			className={`${syne.variable} ${nunitoSans.variable} font-secondary bg-primary text-secondary w-full min-h-screen`}
-		>
-			<Component {...pageProps} />
-		</main>
+		<>
+			<Head>
+				<OgMetaTags />
+			</Head>
+			<main
+				className={`${syne.variable} ${nunitoSans.variable} font-secondary bg-primary text-secondary w-full min-h-screen`}
+			>
+				<Component {...pageProps} />
+			</main>
+		</>
 	);
 }
