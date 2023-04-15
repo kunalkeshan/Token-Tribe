@@ -2,10 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import PublicLayout from '@/layouts/PublicLayout';
+import Head from 'next/head';
 
 const TokenStorePage = () => {
 	return (
 		<PublicLayout>
+			<Head>
+				<title>Buy Tokens | Token-Tribe</title>
+			</Head>
 			<div className='antialiased'>
 				<div className='py-6'>
 					<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6'>

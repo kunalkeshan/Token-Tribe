@@ -5,9 +5,12 @@
 export interface Idea {
 	title: string;
 	target: string;
+	description: string;
 	deadline: number;
 	raisedAmt: number;
 	contributors: number;
+	numberOfDonations?: number;
+	pId?: number;
 }
 
 export interface Poll {
@@ -60,6 +63,7 @@ const communities: Communities = [
 				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
 				deadline: Date.now() + 1000000000,
 				raisedAmt: 25,
+				description: '',
 				contributors: 10,
 			},
 			{
@@ -67,6 +71,7 @@ const communities: Communities = [
 				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
 				deadline: Date.now() + 1000000000,
 				raisedAmt: 25,
+				description: '',
 				contributors: 10,
 			},
 			{
@@ -74,6 +79,7 @@ const communities: Communities = [
 				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
 				deadline: Date.now() + 1000000000,
 				raisedAmt: 25,
+				description: '',
 				contributors: 10,
 			},
 		],
@@ -104,6 +110,7 @@ const communities: Communities = [
 				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
 				deadline: Date.now() + 1000000000,
 				raisedAmt: 25,
+				description: '',
 				contributors: 10,
 			},
 			{
@@ -111,6 +118,7 @@ const communities: Communities = [
 				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
 				deadline: Date.now() + 1000000000,
 				raisedAmt: 25,
+				description: '',
 				contributors: 10,
 			},
 			{
@@ -118,6 +126,7 @@ const communities: Communities = [
 				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
 				deadline: Date.now() + 1000000000,
 				raisedAmt: 25,
+				description: '',
 				contributors: 10,
 			},
 		],
@@ -148,6 +157,7 @@ const communities: Communities = [
 				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
 				deadline: Date.now() + 1000000000,
 				raisedAmt: 25,
+				description: '',
 				contributors: 10,
 			},
 			{
@@ -155,6 +165,7 @@ const communities: Communities = [
 				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
 				deadline: Date.now() + 1000000000,
 				raisedAmt: 25,
+				description: '',
 				contributors: 10,
 			},
 			{
@@ -162,6 +173,7 @@ const communities: Communities = [
 				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
 				deadline: Date.now() + 1000000000,
 				raisedAmt: 25,
+				description: '',
 				contributors: 10,
 			},
 		],

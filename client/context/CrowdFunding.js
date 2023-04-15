@@ -1,24 +1,28 @@
 import React, {useState, useEffect} from 'react';
 import Web3Modal from "web3modal";
 import { ethers } from "ethers";
-
-import { CrowdFundingABI, CrowdFundingAddress } from './constants.js'
-const fetchContract = (signerOrProvider) => {
-    new ethers.Contract(CrowdFundingABI, CrowdFundingAddress, signerOrProvider);
-}
+import { abi } from '../context/CrowdFundingABI'
+import { CrowdFundingAddress } from './constants';
+const contractABI = abi.abi;
+const fetchContract = (signerOrProvider) => new ethers.Contract(CrowdFundingAddress, contractABI, signerOrProvider);
 
 export const CrowdFundingContext = React.createContext();
 
 export const CrowdFundingProvider = ({ children }) => {
     const titleData = "Crowd Funding Contract";
     const [currentAccount, setCurrentAccount] = useState("");
+    const [userIdeas, setUserIdeas] = useState([]);
     
     const createIdea = async (idea) => {
         const { title, description, amount, deadline } = idea;
         const web3modal = new Web3Modal();
+        console.log('here1');
         const connection = await web3modal.connect();
+        console.log('here2');
         const provider = new ethers.providers.Web3Provider(connection);
+        console.log('here3');
         const signer = provider.getSigner();
+        console.log('here4', signer);
         const contract = fetchContract(signer);
 
         console.log(currentAccount);
@@ -32,6 +36,8 @@ export const CrowdFundingProvider = ({ children }) => {
             )
 
             await transaction.wait();
+            console.log(transaction)
+            setUserIdeas([...userIdeas, {...idea, pId: userIdeas.length}])
 
             console.log("contract call success", transaction);
         } catch(error) {
@@ -55,7 +61,7 @@ export const CrowdFundingProvider = ({ children }) => {
             pId: i,
         }))
 
-        return parsedIdeas;
+        return parsedIdeas.reverse();
     }
 
     const getUserIdeas = async () => {
@@ -73,17 +79,23 @@ export const CrowdFundingProvider = ({ children }) => {
             idea.owner === "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
         )
 
-        const userData = filteredIdeas.map((idea, i) => ({
-            owner: campaign.owner,
+        const userDataPromises = filteredIdeas.map(async (idea, i) => {
+            const donations = await contract.getDonators(i);
+            const numberOfDonations = donations[0].length;
+            return {
+            owner: idea.owner,
             title: idea.title,
             description: idea.description,
             target: ethers.utils.formatEther(idea.target.toString()),
             deadline: idea.deadline.toNumber(),
             amountCollected: ethers.utils.formatEther(idea.amountCollected.toString()),
             pId: i,
-        }))
+            numberOfDonations
+            }
+        })
+        const userData = await Promise.all(userDataPromises)
 
-        return userData;
+        return userData.reverse();
     }
 
     const donate = async (pId, amount) => {
@@ -131,7 +143,12 @@ export const CrowdFundingProvider = ({ children }) => {
             })
 
             if(accounts.length) {
-                setCurrentAccount(accounts[0]);
+                console.log(accounts)
+                const account = accounts[0];
+                console.log(account);
+                setCurrentAccount(account);
+                setCurrentAccount(account);
+                console.log(currentAccount);
             } else {
                 console.log("No account found!");
             }
@@ -142,7 +159,17 @@ export const CrowdFundingProvider = ({ children }) => {
 
     useEffect(() => {
         checkIfWalletIsConnected();
-    }, []);
+    }, [currentAccount]);
+
+    useEffect(() => {
+		const userIdeasData = getUserIdeas();
+		const handleUserIdeasUpdate = async () => {
+			const userData = await userIdeasData;
+			console.log(userData)
+			setUserIdeas(userData)
+		}
+		handleUserIdeasUpdate();
+	}, []);
 
     const connectWallet = async () => {
         try {
@@ -168,6 +195,7 @@ export const CrowdFundingProvider = ({ children }) => {
                 donate,
                 getDonations,
                 connectWallet,
+                userIdeas,
             }}
         >
             {children}

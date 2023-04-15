@@ -9,10 +9,18 @@ import {
 	InferGetStaticPropsType,
 	NextPage,
 } from 'next';
-import communities, { Community } from '@/data/communities';
+import communities, { Community, Idea } from '@/data/communities';
 import IdeaCard from '@/components/cards/IdeaCard';
 import PollCard from '@/components/cards/PollCard';
 import Image from 'next/image';
+import {
+	FaDiscord,
+	FaTwitter,
+	FaGlobe,
+	FaInstagram,
+	FaShare,
+} from 'react-icons/fa';
+import Link from 'next/link';
 
 const SingleCommunityPage: NextPage<
 	InferGetStaticPropsType<typeof getStaticProps>
@@ -24,19 +32,31 @@ const SingleCommunityPage: NextPage<
 		createIdea,
 		donate,
 		getUserIdeas,
-		getDonations
+		getDonations,
+		userIdeas
 	} = useContext(CrowdFundingContext);
 
-	const [allIdea, setAllIdea] = useState();
-	const [userIdea, setUserIdea] = useState();
+	// const [allIdea, setAllIdea] = useState();
 
-	useEffect(() => {
-		const userIdeasData = getUserIdeas();
-		return async () => {
-			const userData = await userIdeasData;
-			setUserIdea(userData)
-		}
-	}, []);
+
+	const socialInfo = [
+		{
+			Icon: FaDiscord,
+			url: community.links.discord,
+		},
+		{
+			Icon: FaTwitter,
+			url: community.links.twitter,
+		},
+		{
+			Icon: FaGlobe,
+			url: community.links.website,
+		},
+		{
+			Icon: FaInstagram,
+			url: community.links.instagram,
+		},
+	];
 
 	return (
 		<PublicLayout>
@@ -45,7 +65,13 @@ const SingleCommunityPage: NextPage<
 				<link rel='icon' href={community.profile} />
 			</Head>
 			<div className="bg-[url('/images/community-cover.jpg')] w-full h-32 bg-cover relative">
-				<div className='rounded-full overflow-hidden border-4 border-primary w-32 h-32 absolute left-1/2 -bottom-16 -translate-x-1/2 md:left-3/4'>
+				<Link
+					href={community.links.website}
+					className='rounded-full group overflow-hidden border-4 border-primary w-32 h-32 absolute left-1/2 -bottom-16 -translate-x-1/2 md:left-3/4'
+				>
+					<div className='w-full h-full absolute items-center justify-center bg-black bg-opacity-50 invisible group-hover:visible flex transition-all duration-75'>
+						<FaShare />
+					</div>
 					<Image
 						src={community.profile}
 						width={100}
@@ -53,12 +79,25 @@ const SingleCommunityPage: NextPage<
 						alt={community.name}
 						className='w-full h-auto object-contain'
 					/>
-				</div>
+				</Link>
 			</div>
 			<div className='max-w-[1240px] mt-20 md:mt-4 lg:mt-6 mx-auto w-full flex items-center justify-center flex-col gap-4'>
-				<h1 className='font-primary font-semibold text-3xl w-full'>
-					{community.name}
-				</h1>
+				<div className='w-full'>
+					<h1 className='font-primary font-semibold text-3xl w-full'>
+						{community.name}
+					</h1>
+					<div className='flex gap-4'>
+						{socialInfo.map((info, index) => (
+							<Link
+								href={info.url}
+								key={index}
+								className='hover:scale-105 mt-1'
+							>
+								<info.Icon />
+							</Link>
+						))}
+					</div>
+				</div>
 				<div className='grid grid-cols-1 md:grid-cols-2 mt-4 w-full'>
 					<section>
 						<h2 className='font-primary font-xl font-semibold'>
@@ -76,9 +115,11 @@ const SingleCommunityPage: NextPage<
 							Active Ideas
 						</h2>
 						<div className='mt-4'>
-							{community.ideas.map((idea, idx) => (
-								<IdeaCard key={idx} {...idea} />
-							))}
+							{userIdeas.length > 0 ? 
+							// @ts-ignore
+							userIdeas.map((idea, idx) => (
+								<IdeaCard key={idx} {...idea as Idea} />
+							)): <p>wow. so much empty.</p>}
 						</div>
 					</section>
 				</div>
