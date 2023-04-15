@@ -1,5 +1,7 @@
 import PublicLayout from '@/layouts/PublicLayout';
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { CrowdFundingContext } from '@/context/CrowdFunding';
+
 import Head from 'next/head';
 import {
 	GetStaticPaths,
@@ -15,6 +17,27 @@ import Image from 'next/image';
 const SingleCommunityPage: NextPage<
 	InferGetStaticPropsType<typeof getStaticProps>
 > = ({ community }) => {
+
+	const {
+		titleData,
+		getIdeas,
+		createIdea,
+		donate,
+		getUserIdeas,
+		getDonations
+	} = useContext(CrowdFundingContext);
+
+	const [allIdea, setAllIdea] = useState();
+	const [userIdea, setUserIdea] = useState();
+
+	useEffect(() => {
+		const userIdeasData = getUserIdeas();
+		return async () => {
+			const userData = await userIdeasData;
+			setUserIdea(userData)
+		}
+	}, []);
+
 	return (
 		<PublicLayout>
 			<Head>
