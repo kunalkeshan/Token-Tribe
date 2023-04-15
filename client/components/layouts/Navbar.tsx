@@ -42,20 +42,14 @@ const Navbar = () => {
 					className='hidden sm:flex items-center justify-between'
 				>
 					<li className='p-4 hover:text-gray-500'>
-						<Link href='/'>Explore</Link>
+						<Link href='/#explore'>Explore</Link>
 					</li>
 					<li className='p-4 hover:text-gray-500'>
-						<Link href='/#gallery'>My Communities</Link>
-					</li>
-					<li className='p-4 hover:text-gray-500'>
-						<Link href='/work'>About us</Link>
-					</li>
-					<li className='p-4 hover:text-gray-500'>
-						<Link href='/contact'>Future's</Link>
+						<Link href='/communities'>Communities</Link>
 					</li>
 					<li className='p-4'>
 						<a
-							href='#_'
+							href='#'
 							className='relative inline-flex items-center justify-start px-5 py-3 overflow-hidden font-bold rounded-full group'
 						>
 							<span className='w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]'></span>
