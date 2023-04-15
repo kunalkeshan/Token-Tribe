@@ -1,3 +1,4 @@
+import IdeaCard from '@/components/cards/IdeaCard';
 import Communities from '@/components/landing/Communities';
 import Intro from '@/components/landing/Intro';
 import PublicLayout from '@/layouts/PublicLayout';
@@ -20,6 +21,7 @@ export default function Home() {
 			</Head>
 			<Intro />
 			<Communities />
+			<IdeaCard/>
 		</PublicLayout>
 	);
 }
