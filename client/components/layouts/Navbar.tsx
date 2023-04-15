@@ -28,7 +28,7 @@ const Navbar = () => {
 				<Link href='/'>
 					<h1
 						style={{ color: `${textColor}` }}
-						className='font-bold text-4xl'
+						className='font-bold text-4xl font-primary'
 					>
 						Token Tribe
 					</h1>
