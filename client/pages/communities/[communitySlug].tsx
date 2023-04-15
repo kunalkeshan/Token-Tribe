@@ -20,11 +20,11 @@ const SingleCommunityPage: NextPage<
 				<title>{community.name}</title>
 				<link rel='icon' href={community.profile} />
 			</Head>
-			<div className='max-w-[1240px] mx-auto w-full'>
-				<h1 className='font-primary font-semibold text-3xl'>
+			<div className='max-w-[1240px] mx-auto w-full flex items-center justify-center flex-col gap-4'>
+				<h1 className='font-primary font-semibold text-3xl w-full'>
 					{community.name}
 				</h1>
-				<div className='grid grid-cols-1 md:grid-cols-2 mt-4'>
+				<div className='grid grid-cols-1 md:grid-cols-2 mt-4 w-full'>
 					<section>
 						<h2 className='font-primary font-xl font-semibold'>
 							Active Polls

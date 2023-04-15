@@ -35,7 +35,7 @@ const IdeaCard: React.FC<Idea> = ({
 			return <></>;
 		} else {
 			return (
-				<p className='bg-tertiary bg-opacity-40 flex items-center justify-center p-4 rounded-lg'>
+				<p className='bg-tertiary bg-opacity-40 min-w-fit flex items-center justify-center p-4 rounded-lg'>
 					{days} d left
 				</p>
 			);
