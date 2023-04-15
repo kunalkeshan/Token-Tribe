@@ -1,6 +1,7 @@
-import React from "react";
+import React from 'react';
 
 const Intro = () => {
+
   return (
     <>
       <div className="group/wrap relative mb-5">
