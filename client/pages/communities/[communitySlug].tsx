@@ -9,6 +9,7 @@ import {
 } from 'next';
 import communities, { Community } from '@/data/communities';
 import IdeaCard from '@/components/cards/IdeaCard';
+import PollCard from '@/components/cards/PollCard';
 
 const SingleCommunityPage: NextPage<
 	InferGetStaticPropsType<typeof getStaticProps>
@@ -19,23 +20,33 @@ const SingleCommunityPage: NextPage<
 				<title>{community.name}</title>
 				<link rel='icon' href={community.profile} />
 			</Head>
-			<div className='max-w-[1240px] mx-auto'>
+			<div className='max-w-[1240px] mx-auto w-full'>
 				<h1 className='font-primary font-semibold text-3xl'>
 					{community.name}
 				</h1>
-			</div>
-			<div className='grid grid-cols-1 md:grid-cols-2'>
-				<section></section>
-				<section>
-					<h2 className='font-primary font-xl font-semibold'>
-						Active Ideas
-					</h2>
-					<div>
-						{community.ideas.map((idea, idx) => (
-							<IdeaCard key={idx} {...idea} />
-						))}
-					</div>
-				</section>
+				<div className='grid grid-cols-1 md:grid-cols-2 mt-4'>
+					<section>
+						<h2 className='font-primary font-xl font-semibold'>
+							Active Polls
+						</h2>
+						<div className='mt-4'>
+							<PollCard
+								{...community.pool}
+								ideas={community.ideas}
+							/>
+						</div>
+					</section>
+					<section>
+						<h2 className='font-primary font-xl font-semibold'>
+							Active Ideas
+						</h2>
+						<div className='mt-4'>
+							{community.ideas.map((idea, idx) => (
+								<IdeaCard key={idx} {...idea} />
+							))}
+						</div>
+					</section>
+				</div>
 			</div>
 		</PublicLayout>
 	);
