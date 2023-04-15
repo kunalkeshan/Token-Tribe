@@ -43,7 +43,7 @@ const IdeaCard: React.FC<Idea> = ({
 	};
 
 	return (
-		<div className='block max-w-md p-6 border bg-[#222] rounded-lg shadow border-black text-secondary mb-4'>
+		<div className='block max-w-md hover:scale-95 cursor-pointer p-6 border bg-[#222] hover:bg-[#373737] rounded-lg shadow border-black text-secondary mb-4 transition-all duration-300'>
 			<p className='font-primary font-bold text-lg'>{title}</p>
 			<div className='flex w-full items-center justify-between gap-4'>
 				<p>{target}</p>
