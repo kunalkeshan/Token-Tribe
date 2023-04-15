@@ -2,6 +2,19 @@
  * Communities Data
  */
 
+export interface Idea {
+	title: string;
+	target: string;
+	deadline: number;
+	raisedAmt: number;
+	contributors: number;
+}
+
+export interface Poll {
+	target: string;
+	deadline: number;
+}
+
 export interface Community {
 	name: string;
 	slug: string;
@@ -16,9 +29,13 @@ export interface Community {
 		instagram: string;
 		twitter: string;
 	};
+	ideas: Ideas;
+	pool: Poll;
 }
 
 export type Communities = Community[];
+
+export type Ideas = Idea[];
 
 const communities: Communities = [
 	{
@@ -36,6 +53,33 @@ const communities: Communities = [
 			instagram: '#',
 			twitter: '#',
 		},
+		ideas: [
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: Date.now() + 1000000000,
+				raisedAmt: 25,
+				contributors: 10,
+			},
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: Date.now() + 1000000000,
+				raisedAmt: 25,
+				contributors: 10,
+			},
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: Date.now() + 1000000000,
+				raisedAmt: 25,
+				contributors: 10,
+			},
+		],
+		pool: {
+			target: 'Make squid game a real life event.',
+			deadline: Date.now() + 1000000000,
+		},
 	},
 	{
 		name: 'Tanmay Bhat',
@@ -52,6 +96,33 @@ const communities: Communities = [
 			instagram: '#',
 			twitter: '#',
 		},
+		ideas: [
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: Date.now() + 1000000000,
+				raisedAmt: 25,
+				contributors: 10,
+			},
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: Date.now() + 1000000000,
+				raisedAmt: 25,
+				contributors: 10,
+			},
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: Date.now() + 1000000000,
+				raisedAmt: 25,
+				contributors: 10,
+			},
+		],
+		pool: {
+			target: 'Make finance easy to learn with jokes as complementary',
+			deadline: Date.now() + 1000000000,
+		},
 	},
 	{
 		name: 'PewDiePie',
@@ -67,6 +138,34 @@ const communities: Communities = [
 			discord: '#',
 			instagram: '#',
 			twitter: '#',
+		},
+		ideas: [
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: Date.now() + 1000000000,
+				raisedAmt: 25,
+				contributors: 10,
+			},
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: Date.now() + 1000000000,
+				raisedAmt: 25,
+				contributors: 10,
+			},
+			{
+				title: 'XYZ Idea',
+				target: 'xyz lorem ipsum doler amet xyz lorem ipsum dler amet xy',
+				deadline: Date.now() + 1000000000,
+				raisedAmt: 25,
+				contributors: 10,
+			},
+		],
+		pool: {
+			target: 'Play minecraft for the next 30 days till I kill the ether dragon.',
+			deadline: Date.now() + 1000000000,
+
 		},
 	},
 ];
