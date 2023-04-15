@@ -12,17 +12,17 @@ const TokenStorePage = () => {
             <div className="flex flex-col md:flex-row -mx-4">
               <div className="md:flex-1 px-4">
                 <div x-data="{ image: 1 }" x-cloak>
-                  <div className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 ">
+                  <div className="h-64 md:h-80 rounded-lg mb-4 object-cover">
                     <div
                       x-show="image === 1"
-                      className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center "
+                      className="h-64 md:h-80 rounded-lg  mb-4 flex items-center justify-center object-cover"
                     >
                       <Image
                         src="/CommiuniCoin.png"
                         alt="token logo of Token Tribe"
                         width={600}
                         height={500}
-                        className="rounded-lg"
+                        className="rounded-lg object-cover"
                       />
                     </div>
                   </div>

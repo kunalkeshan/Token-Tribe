@@ -3,7 +3,7 @@ import React from "react";
 const Intro = () => {
   return (
     <>
-      <div className="group/wrap relative">
+      <div className="group/wrap relative mb-5">
         <div className="relative h-screen snap-y snap-mandatory overflow-y-auto scroll-smooth bg-starFace bg-cover">
           <div className="group flex h-screen w-full snap-start items-center justify-center">
             <div>
