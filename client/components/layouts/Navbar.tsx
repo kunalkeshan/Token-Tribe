@@ -35,7 +35,7 @@ const Navbar = () => {
           className="hidden sm:flex items-center justify-between"
         >
           <li className="p-4 hover:text-gray-500">
-            <Link href="/">Home</Link>
+            <Link href="/">Explore</Link>
           </li>
           <li className="p-4 hover:text-gray-500">
             <Link href="/#gallery">My Communities</Link>
@@ -82,7 +82,7 @@ const Navbar = () => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/">Home</Link>
+              <Link href="/">Explore</Link>
             </li>
             <li
               onClick={handleNav}
