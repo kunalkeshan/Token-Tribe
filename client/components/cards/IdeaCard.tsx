@@ -15,7 +15,7 @@ const IdeaCard: React.FC<Idea> = ({
 	const infoItems = [
 		{
 			Icon: AiFillCalendar,
-			info: deadline,
+			info: new Date(deadline).toDateString(),
 			title: 'Deadline',
 		},
 		{
@@ -51,7 +51,7 @@ const IdeaCard: React.FC<Idea> = ({
 			</div>
 			<ul className='flex gap-4 items-center flex-wrap mt-4'>
 				{infoItems.map((item) => (
-					<li className='flex rounded-3xl bg-tertiary gap-4 bg-opacity-20 items-center px-4 py-2'>
+					<li className='flex rounded-3xl hover:bg-opacity-40 transition-all duration-300 bg-tertiary gap-4 bg-opacity-20 items-center px-4 py-2'>
 						<item.Icon className='text-xl' />
 						<span className='text-left font-primary w-full text-xs'>
 							<p className='font-bold'>{item.title}</p>

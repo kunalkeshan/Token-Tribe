@@ -35,7 +35,7 @@ const PollCard: React.FC<Poll & { ideas: Ideas }> = ({
 				{ideas.map((idea, idx) => (
 					<li
 						key={idx}
-						className='flex items-center justify-between px-4 py-2 rounded-xl bg-tertiary bg-opacity-20'
+						className='flex items-center hover:translate-x-1 transition-all cursor-pointer duration-300 justify-between px-4 py-2 rounded-xl bg-tertiary bg-opacity-20'
 					>
 						<p>{idea.title}</p>
 						<AiOutlineArrowRight />
