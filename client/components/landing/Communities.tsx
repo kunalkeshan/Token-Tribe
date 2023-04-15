@@ -4,7 +4,7 @@ import CommunityCard from '../cards/CommunityCard';
 
 const Communities = () => {
 	return (
-		<section className='w-full mt-8'>
+		<section className='w-full mt-8' id='explore'>
 			<div className='max-w-[1240px] mx-auto'>
 				<h2 className='font-primary text-2xl font-semibold'>
 					Explore Communities
