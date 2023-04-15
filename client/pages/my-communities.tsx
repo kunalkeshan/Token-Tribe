@@ -13,7 +13,7 @@ const MyCommunitiesPage: NextPage<
 			<Head>
 				<title>My Communities | Token-Tribe</title>
 			</Head>
-			<section className='w-full mt-8'>
+			<section className='w-full mt-8 px-12'>
 				<div className='max-w-[1240px] mx-auto'>
 					<h2 className='font-primary text-2xl font-semibold'>
 						My Communities

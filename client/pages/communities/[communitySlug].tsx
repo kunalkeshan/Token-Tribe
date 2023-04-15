@@ -81,7 +81,7 @@ const SingleCommunityPage: NextPage<
 					/>
 				</Link>
 			</div>
-			<div className='max-w-[1240px] mt-20 md:mt-4 lg:mt-6 mx-auto w-full flex items-center justify-center flex-col gap-4'>
+			<div className='max-w-[1240px] mt-20 md:mt-4 lg:mt-6 mx-auto w-full flex items-center justify-center flex-col gap-4 px-12'>
 				<div className='w-full'>
 					<h1 className='font-primary font-semibold text-3xl w-full'>
 						{community.name}
@@ -98,8 +98,8 @@ const SingleCommunityPage: NextPage<
 						))}
 					</div>
 				</div>
-				<div className='grid grid-cols-1 md:grid-cols-2 mt-4 w-full'>
-					<section>
+				<div className='grid grid-cols-1 md:grid-cols-2 mt-4 w-full mx-auto'>
+					<section className='mx-auto w-full'>
 						<h2 className='font-primary font-xl font-semibold'>
 							Active Polls
 						</h2>
@@ -110,7 +110,7 @@ const SingleCommunityPage: NextPage<
 							/>
 						</div>
 					</section>
-					<section>
+					<section className='mx-auto w-full'>
 						<h2 className='font-primary font-xl font-semibold'>
 							Active Ideas
 						</h2>

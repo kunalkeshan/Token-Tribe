@@ -3,7 +3,6 @@
  */
 
 export interface Idea {
-	title: string;
 	target: string;
 	description: string;
 	deadline: number;
@@ -11,30 +10,31 @@ export interface Idea {
 	contributors: number;
 	numberOfDonations?: number;
 	pId?: number;
+  title: string;
 }
 
 export interface Poll {
-	target: string;
-	deadline: number;
+  target: string;
+  deadline: number;
 }
 
 export interface Community {
-	name: string;
-	slug: string;
-	description: string;
-	profile: string;
-	price: number;
-	token: string;
-	strength: number;
-	links: {
-		website: string;
-		discord: string;
-		instagram: string;
-		twitter: string;
-	};
-	ideas: Ideas;
-	pool: Poll;
-	myCommunity: boolean;
+  name: string;
+  slug: string;
+  description: string;
+  profile: string;
+  price: number;
+  token: string;
+  strength: number;
+  links: {
+    website: string;
+    discord: string;
+    instagram: string;
+    twitter: string;
+  };
+  ideas: Ideas;
+  pool: Poll;
+  myCommunity: boolean;
 }
 
 export type Communities = Community[];
