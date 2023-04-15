@@ -13,8 +13,12 @@ const Navbar = () => {
 
   useEffect(() => {
     const changeColor = () => {
-      setColor("#0D0D0D");
-      setTextColor("#ffffff");
+      if (window.scrollY >= 80) {
+        setColor("#0D0D0D");
+        setTextColor("#ffffff");
+      } else {
+        setColor("transparent");
+      }
     };
     window.addEventListener("scroll", changeColor);
   }, []);
@@ -22,7 +26,7 @@ const Navbar = () => {
   return (
     <nav
       style={{ backgroundColor: `${color}` }}
-      className="sticky z-10 left-0 top-0 w-full  ease-in duration-300 "
+      className="sticky z-20 left-0 top-0 w-full  ease-in duration-300 "
     >
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
         <Link href="/">
