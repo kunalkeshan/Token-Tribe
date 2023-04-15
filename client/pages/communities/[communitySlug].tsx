@@ -10,6 +10,7 @@ import {
 import communities, { Community } from '@/data/communities';
 import IdeaCard from '@/components/cards/IdeaCard';
 import PollCard from '@/components/cards/PollCard';
+import Image from 'next/image';
 
 const SingleCommunityPage: NextPage<
 	InferGetStaticPropsType<typeof getStaticProps>
@@ -20,7 +21,18 @@ const SingleCommunityPage: NextPage<
 				<title>{community.name}</title>
 				<link rel='icon' href={community.profile} />
 			</Head>
-			<div className='max-w-[1240px] mx-auto w-full flex items-center justify-center flex-col gap-4'>
+			<div className="bg-[url('/images/community-cover.jpg')] w-full h-32 bg-cover relative">
+				<div className='rounded-full overflow-hidden border-4 border-primary w-32 h-32 absolute left-1/2 -bottom-16 -translate-x-1/2 md:left-3/4'>
+					<Image
+						src={community.profile}
+						width={100}
+						height={100}
+						alt={community.name}
+						className='w-full h-auto object-contain'
+					/>
+				</div>
+			</div>
+			<div className='max-w-[1240px] mt-20 md:mt-4 lg:mt-6 mx-auto w-full flex items-center justify-center flex-col gap-4'>
 				<h1 className='font-primary font-semibold text-3xl w-full'>
 					{community.name}
 				</h1>
