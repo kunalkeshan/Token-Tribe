@@ -1,5 +1,6 @@
 import Communities from '@/components/landing/Communities';
 import Intro from '@/components/landing/Intro';
+import Tracks from '@/components/landing/Tracks';
 import PublicLayout from '@/layouts/PublicLayout';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -21,6 +22,7 @@ export default function Home() {
 			</Head>
 			<Intro />
 			<Communities />
+			<Tracks />
 		</PublicLayout>
 	);
 }
