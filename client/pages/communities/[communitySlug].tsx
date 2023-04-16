@@ -28,15 +28,25 @@ const SingleCommunityPage: NextPage<
 
 	const {
 		titleData,
-		getIdeas,
 		createIdea,
 		donate,
 		getUserIdeas,
 		getDonations,
-		userIdeas
+		userIdeas,
+		setUserIdeas
 	} = useContext(CrowdFundingContext);
 
 	// const [allIdea, setAllIdea] = useState();
+
+	    useEffect(() => {
+		const userIdeasData = getUserIdeas(community.address);
+		const handleUserIdeasUpdate = async () => {
+			const userData = await userIdeasData;
+			console.log(userData)
+			setUserIdeas(userData)
+		}
+		handleUserIdeasUpdate();
+	}, []);
 
 
 	const socialInfo = [
@@ -106,6 +116,7 @@ const SingleCommunityPage: NextPage<
 						<div className='mt-4'>
 							<PollCard
 								{...community.pool}
+								communityAccount={community.address}
 								ideas={community.ideas}
 							/>
 						</div>
@@ -115,6 +126,7 @@ const SingleCommunityPage: NextPage<
 							Active Ideas
 						</h2>
 						<div className='mt-4'>
+							{console.log(userIdeas)};
 							{userIdeas.length > 0 ? 
 							// @ts-ignore
 							userIdeas.map((idea, idx) => (
