@@ -2,27 +2,26 @@ import React, {useState, useEffect} from 'react';
 import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 import { abi } from '../context/CrowdFundingABI'
-import { CrowdFundingAddress } from './constants';
+
+// const { API_KEY } = process.env;
+
+const CrowdFundingAddress = "0xA658ABE797164F3D2989699f980db6847D86a121";
 const contractABI = abi.abi;
 const fetchContract = (signerOrProvider) => new ethers.Contract(CrowdFundingAddress, contractABI, signerOrProvider);
 
 export const CrowdFundingContext = React.createContext();
+const providerOptions = {}
 
 export const CrowdFundingProvider = ({ children }) => {
     const titleData = "Crowd Funding Contract";
     const [currentAccount, setCurrentAccount] = useState("");
     const [userIdeas, setUserIdeas] = useState([]);
+    const [web3Provider, setWeb3Provider] = useState(null);
+    const [walletConnected, setWalletConnected] = useState(false);
     
     const createIdea = async (idea) => {
         const { title, description, amount, deadline } = idea;
-        const web3modal = new Web3Modal();
-        console.log('here1');
-        const connection = await web3modal.connect();
-        console.log('here2');
-        const provider = new ethers.providers.Web3Provider(connection);
-        console.log('here3');
-        const signer = provider.getSigner();
-        console.log('here4', signer);
+        const signer = web3Provider.getSigner();
         const contract = fetchContract(signer);
 
         console.log(currentAccount);
@@ -45,41 +44,17 @@ export const CrowdFundingProvider = ({ children }) => {
         }
     }
 
-    const getIdeas = async () => {
-        const provider = new ethers.providers.JsonRpcProvider();
-        const contract = fetchContract(provider);
-
-        const ideas = await contract.getIdeas();
-
-        const parsedIdeas = ideas.map((idea, i) => ({
-            owner: idea.owner,
-            title: idea.title,
-            description: idea.description,
-            target: ethers.utils.formatEther(idea.target.toString()),
-            deadline: idea.deadline.toNumber(),
-            amountCollected: ethers.utils.formatEther(idea.amountCollected.toString()),
-            pId: i,
-        }))
-
-        return parsedIdeas.reverse();
-    }
-
-    const getUserIdeas = async () => {
+    const getUserIdeas = async (address) => {
         const provider = new ethers.providers.JsonRpcProvider();
         const contract = fetchContract(provider);
 
         const allIdeas = await contract.getIdeas();
-        const accounts = await window.ethereum.request({
-            method: "eth_accounts",
-        })
 
-        const currentUser = accounts[0];
+        // const filteredIdeas = allIdeas.filter((idea) => 
+        //     idea.owner === address
+        // )
 
-        const filteredIdeas = allIdeas.filter((idea) => 
-            idea.owner === "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
-        )
-
-        const userDataPromises = filteredIdeas.map(async (idea, i) => {
+        const userDataPromises = allIdeas.map(async (idea, i) => {
             const donations = await contract.getDonators(i);
             const numberOfDonations = donations[0].length;
             return {
@@ -110,8 +85,6 @@ export const CrowdFundingProvider = ({ children }) => {
         });
 
         await ideaData.wait();
-        location.reload();
-
         return ideaData;
     }
 
@@ -133,33 +106,43 @@ export const CrowdFundingProvider = ({ children }) => {
         return parsedDonations;
     };
 
+        // const getIdeas = async () => {
+    //     const provider = new ethers.providers.JsonRpcProvider();
+    //     const contract = fetchContract(provider);
+
+    //     const ideas = await contract.getIdeas();
+
+    //     const parsedIdeas = ideas.map((idea, i) => ({
+    //         owner: idea.owner,
+    //         title: idea.title,
+    //         description: idea.description,
+    //         target: ethers.utils.formatEther(idea.target.toString()),
+    //         deadline: idea.deadline.toNumber(),
+    //         amountCollected: ethers.utils.formatEther(idea.amountCollected.toString()),
+    //         pId: i,
+    //     }))
+
+    //     return parsedIdeas.reverse();
+    // }
+
     const checkIfWalletIsConnected = async () => {
         try {
-            if(!window.ethereum)
-                return setOpenError(true), setError("Install Metamask");
-
-            const accounts = await window.ethereum.request({
-                method: "eth_accounts",
-            })
-
-            if(accounts.length) {
-                console.log(accounts)
-                const account = accounts[0];
-                console.log(account);
-                setCurrentAccount(account);
-                setCurrentAccount(account);
-                console.log(currentAccount);
-            } else {
-                console.log("No account found!");
+            if(!window.ethereum.isConnected()){
+                setCurrentAccount(null);
+                setWalletConnected(false);
+            }
+            else {
+                setWalletConnected(true);
             }
         } catch(error) {
+            setWalletConnected(false);
             console.log("Something went wrong while connecting to the wallet.")
         }
     }
 
     useEffect(() => {
         checkIfWalletIsConnected();
-    }, [currentAccount]);
+    },[walletConnected]);
 
     useEffect(() => {
 		const userIdeasData = getUserIdeas();
@@ -173,16 +156,26 @@ export const CrowdFundingProvider = ({ children }) => {
 
     const connectWallet = async () => {
         try {
-            if(!window.ethereum) return console.log("Install MetaMask");
-            
-            const accounts = await window.ethereum.request({
-                method: "eth_requestAccounts",
+            let web3Modal = new Web3Modal({
+                cacheProvider: false,
+                providerOptions,
             });
-            setCurrentAccount(accounts[0]);
+
+            const web3ModalInstance = await web3Modal.connect();
+            const web3ModalProvider = new ethers.providers.Web3Provider(web3ModalInstance);
+            if(web3ModalProvider) {
+                setWeb3Provider(web3ModalProvider);
+            }
+            setCurrentAccount(web3Provider.provider.selectedAddress);
+            setCurrentAccount(web3Provider.provider.selectedAddress);
         } catch(error) {
             console.log("Error while connecting to the account.");
         }
     }
+
+    useEffect(() => {
+        connectWallet();
+    }, [currentAccount]);
 
     return(
         <CrowdFundingContext.Provider
@@ -190,12 +183,13 @@ export const CrowdFundingProvider = ({ children }) => {
                 titleData,
                 currentAccount,
                 createIdea,
-                getIdeas,
+                // getIdeas,
                 getUserIdeas,
                 donate,
                 getDonations,
                 connectWallet,
                 userIdeas,
+                setUserIdeas
             }}
         >
             {children}

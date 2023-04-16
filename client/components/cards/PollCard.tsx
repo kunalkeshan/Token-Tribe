@@ -5,11 +5,12 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import { IoIosAddCircle } from 'react-icons/io';
 import {CrowdFundingContext} from '../../context/CrowdFunding'
 
-const PollCard: React.FC<Poll & { ideas: Ideas }> = (
+const PollCard: React.FC<Poll & { ideas: Ideas, communityAccount?: string }> = (
 	{
 		// deadline,
 		// target,
 		// ideas,
+		communityAccount
 	}
 ) => {
 	// const renderer: CountdownRendererFn = ({
@@ -29,7 +30,7 @@ const PollCard: React.FC<Poll & { ideas: Ideas }> = (
 	// 		);
 	// 	}
 	// };
-	const {createIdea} = useContext(CrowdFundingContext);
+	const {createIdea, currentAccount} = useContext(CrowdFundingContext);
 
 	const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
 		try {e.preventDefault();
@@ -48,7 +49,7 @@ const PollCard: React.FC<Poll & { ideas: Ideas }> = (
 
 	return (
 		<div className='block max-w-md p-6 border bg-[#222] rounded-lg shadow border-black text-secondary mb-4'>
-			<h3 className='font-primary text-2xl font-semibold'>
+			{communityAccount?.toLowerCase() === currentAccount ? <><h3 className='font-primary text-2xl font-semibold'>
 				Create new idea
 			</h3>
 			{/* <p>{target}</p> */}
@@ -123,7 +124,9 @@ const PollCard: React.FC<Poll & { ideas: Ideas }> = (
 			{/* <p className='mt-2 w-full text-right'>
 				Poll ends in: <Countdown renderer={renderer} date={deadline} />
 			</p> */}
+			</> : <>Check ideas</>}
 		</div>
+
 	);
 };
 
