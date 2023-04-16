@@ -25,6 +25,14 @@ const Footer = () => {
 			name: 'My Communities',
 			url: '/my-communities',
 		},
+		{
+			name: 'Terms of Conditions',
+			url: '/toc',
+		},
+		{
+			name: 'Privacy Policy',
+			url: '/policy',
+		},
 	];
 
 	const teamOptions = [
