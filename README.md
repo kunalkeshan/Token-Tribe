@@ -24,3 +24,4 @@ Overall, Token Tribe is an innovative app that empowers social media communities
 
 - Polygon:- Contract is deployed on polygon mumbai test net.
 - Zeeve:- Using RPC endpoint and zeeve's API and also using Zeeve's Analytics.
+- Replit:- Developed and deployed web app with Replit's online editor, collaborating in real-time and deploying with ease.
