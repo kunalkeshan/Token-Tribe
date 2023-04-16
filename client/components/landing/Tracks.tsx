@@ -8,6 +8,7 @@ const Tracks = () => {
 		'ethereum',
 		'blockchain',
 		'open innovation',
+		'spheron',
 	];
 
 	return (
